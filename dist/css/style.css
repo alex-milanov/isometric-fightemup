@@ -2340,7 +2340,9 @@ body {
   padding: 0px;
   display: inline-block;
   box-sizing: border-box;
-  font-family: "Open Sans"; }
+  font-family: 'Fira Code';
+  background: #000;
+  color: #eee; }
 
 .left {
   float: left; }
@@ -2354,37 +2356,73 @@ body {
 .text-right {
   text-align: right; }
 
-#ui .counter {
-  height: 32px;
-  line-height: 32px; }
-  #ui .counter > * {
-    float: left; }
-  #ui .counter > span {
-    height: 32px;
-    line-height: 32px;
-    display: inline-block;
-    font-size: 14px;
-    padding: 0px 10px; }
-  #ui .counter button {
+body, input, button, h1, h2, h3, h4 {
+  font-family: 'Fira Code';
+  color: #eee; }
+
+@font-face {
+  font-family: 'Fira Code';
+  src: url("../fonts/eot/FiraCode-Light.eot");
+  src: url("../fonts/eot/FiraCode-Light.eot") format("embedded-opentype"), url("../fonts/woff2/FiraCode-Light.woff2") format("woff2"), url("../fonts/woff/FiraCode-Light.woff") format("woff"), url("../fonts/ttf/FiraCode-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Fira Code';
+  src: url("../fonts/eot/FiraCode-Regular.eot");
+  src: url("../fonts/eot/FiraCode-Regular.eot") format("embedded-opentype"), url("../fonts/woff2/FiraCode-Regular.woff2") format("woff2"), url("../fonts/woff/FiraCode-Regular.woff") format("woff"), url("../fonts/ttf/FiraCode-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Fira Code';
+  src: url("../fonts/eot/FiraCode-Medium.eot");
+  src: url("../fonts/eot/FiraCode-Medium.eot") format("embedded-opentype"), url("../fonts/woff2/FiraCode-Medium.woff2") format("woff2"), url("../fonts/woff/FiraCode-Medium.woff") format("woff"), url("../fonts/ttf/FiraCode-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Fira Code';
+  src: url("../fonts/eot/FiraCode-Bold.eot");
+  src: url("../fonts/eot/FiraCode-Bold.eot") format("embedded-opentype"), url("../fonts/woff2/FiraCode-Bold.woff2") format("woff2"), url("../fonts/woff/FiraCode-Bold.woff") format("woff"), url("../fonts/ttf/FiraCode-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal; }
+
+#ui {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%; }
+  #ui header {
+    margin: 0px;
+    padding: 0px;
     display: inline-block;
     box-sizing: border-box;
-    height: 32px;
-    line-height: 12px;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 14px;
-    background: #fafafa;
-    color: #333;
-    border: 0px;
-    transition: box-shadow 0.3s, background 0.3s;
-    box-shadow: 1px 1px 2px #ccc;
-    outline: none; }
-    #ui .counter button:active {
-      padding: 11px 10px 9px 10px; }
-    #ui .counter button:active {
-      outline: none; }
-    #ui .counter button:hover {
-      box-shadow: 1px 1px 5px #aaa;
-      color: #000; }
+    height: 48px;
+    line-height: 48px;
+    width: 100%;
+    display: block;
+    background: #333;
+    z-index: 1000;
+    opacity: 0.7; }
+    #ui header h1 {
+      margin: 0px;
+      padding: 0px;
+      display: inline-block;
+      box-sizing: border-box;
+      height: 48px;
+      line-height: 48px;
+      font-size: 18px;
+      width: 100%;
+      text-align: center;
+      color: #999; }
+  #ui #view3d {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -1; }
 
 /*# sourceMappingURL=style.css.map */

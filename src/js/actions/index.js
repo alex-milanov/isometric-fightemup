@@ -7,6 +7,9 @@ const counter = require('./counter');
 
 // initial
 const initial = {
+	cameraOffset: [0, 200, -100],
+	position: [0, 0, 0],
+	needsRefresh: false
 };
 
 // actions
@@ -17,10 +20,14 @@ const arrToggle = (key, value) => state =>
 		arr.toggle(obj.sub(state, key), value)
 	);
 
+const move = (direction, force) =>
+	state => obj.patch(state, 'position', state.position.map((p, i) => (p + direction[i] * force)));
+
 module.exports = {
 	initial,
 	counter,
 	set,
 	toggle,
-	arrToggle
+	arrToggle,
+	move
 };

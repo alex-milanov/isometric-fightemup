@@ -3,13 +3,32 @@
 const {obj, arr} = require('iblokz-data');
 
 // namespaces=
-const counter = require('./counter');
 
 // initial
 const initial = {
-	cameraOffset: [0, 200, -100],
+	camera: {
+		distance: 520,
+		range: {
+			h: 360,
+			hOffset: -90,
+			v: 80,
+			vOffset: 10
+		},
+		rotateWithPlayer: false
+	},
 	position: [0, 0, 0],
-	needsRefresh: false
+	needsRefresh: false,
+	// 3d view info
+	view: {
+		width: 800,
+		height: 600,
+		x: 400,
+		y: 300
+	},
+	controls: {
+		on: true,
+		camera: true
+	}
 };
 
 // actions
@@ -23,11 +42,16 @@ const arrToggle = (key, value) => state =>
 const move = (direction, force) =>
 	state => obj.patch(state, 'position', state.position.map((p, i) => (p + direction[i] * force)));
 
+const updateView = (width, height, x, y) => state =>
+	obj.patch(state, 'view', {
+		width, height, x, y
+	});
+
 module.exports = {
 	initial,
-	counter,
 	set,
 	toggle,
 	arrToggle,
-	move
+	move,
+	updateView
 };

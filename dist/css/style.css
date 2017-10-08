@@ -2417,6 +2417,51 @@ body, input, button, h1, h2, h3, h4 {
       width: 100%;
       text-align: center;
       color: #999; }
+  #ui .controls {
+    position: absolute;
+    top: 64px;
+    left: 8px;
+    width: 240px;
+    min-height: 400px;
+    opacity: 0.7;
+    z-index: 1000; }
+    #ui .controls fieldset {
+      padding: 0px;
+      background: rgba(0, 0, 0, 0.3);
+      margin-bottom: 10px; }
+      #ui .controls fieldset legend {
+        padding: 0px 5px 0px 5px;
+        margin: 0px 5px;
+        user-select: none;
+        cursor: pointer; }
+        #ui .controls fieldset legend i {
+          margin-right: 5px;
+          font-size: 0.8em; }
+    #ui .controls label, #ui .controls input, #ui .controls div {
+      margin: 0px;
+      padding: 0px;
+      display: inline-block;
+      box-sizing: border-box;
+      height: 32px;
+      line-height: 32px;
+      border: 0px;
+      color: white; }
+    #ui .controls div {
+      padding: 0px 10px;
+      width: 100%;
+      font-size: 0.8em; }
+    #ui .controls div.toggle {
+      cursor: pointer;
+      user-select: none; }
+      #ui .controls div.toggle i {
+        width: 24px; }
+      #ui .controls div.toggle:hover {
+        background: rgba(255, 255, 255, 0.1); }
+    #ui .controls input, #ui .controls label {
+      width: 50%;
+      background: none;
+      outline: none;
+      font-size: 1em; }
   #ui #view3d {
     position: fixed;
     top: 0px;

@@ -74,15 +74,18 @@ $.interval(100).map(() => document.querySelector('#view3d'))
 	.subscribe(canvas => render3d.hook(state$, actions, canvas));
 
 // control
-const pressedKeys$ = keyboard.watch(['left', 'right', 'up', 'down', 'shift']);
+const pressedKeys$ = keyboard.watch(['left', 'right', 'up', 'down', 'shift', 'w', 'a', 's', 'd']);
 
 const getDirection = keys => ([
-	keys.left && 1 || keys.right && -1 || 0,
+	(keys.left || keys.a) && 1 || (keys.right || keys.d) && -1 || 0,
 	0,
-	keys.up && 1 || keys.down && -1 || 0
+	(keys.up || keys.w) && 1 || (keys.down || keys.s) && -1 || 0
 ]);
 
-const getForce = keys => (keys.shift && 10 || 5) * ((keys.left || keys.right || keys.up || keys.down) ? 1 : 0);
+const getForce = keys => (keys.shift && 10 || 5) * ((
+	keys.left || keys.right || keys.up || keys.down
+	|| keys.a || keys.d || keys.w || keys.s
+) ? 1 : 0);
 
 const directionForce$ = pressedKeys$
 	// .filter(keys => keys.up || keys.down || keys.left || keys.right)
@@ -95,6 +98,17 @@ const directionForce$ = pressedKeys$
 time.frame().withLatestFrom(directionForce$, (t, df) => df)
 	.filter(({force}) => force > 0)
 	.subscribe(({direction, force}) => actions.move(direction, force));
+
+$.fromEvent(document, 'mousemove')
+	.subscribe(ev => (
+		// console.log(ev),
+		actions.updateView(
+			window.innerWidth,
+			window.innerHeight,
+			ev.pageX,
+			ev.pageY
+		)
+	));
 
 /*
 const jump$ = keyboard.on('space')

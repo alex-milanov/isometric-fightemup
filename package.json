@@ -1,5 +1,5 @@
 {
-  "name": "ui-boilerplate",
+  "name": "isometric-fightemup",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,8 +14,8 @@
     "watch:assets": "nodemon -e jpg,jpeg,gif,png,json --watch src/assets --exec 'npm run build:assets'",
     "livereload": "livereload dist/**/*.css -d",
     "start": "npm run build && serve --path dist & npm run watch",
-    "commit": "npm run build && git add . && git commit && git push",
-    "sync:gh": "git checkout gh-pages && git rebase master && git push && git checkout master"
+    "sync:gh": "git checkout gh-pages && git rebase master && git push && git checkout master",
+    "commit": "npm run build && git add . && git commit && git push && npm run sync:gh"
   },
   "author": "Alex Milanov <alex@i4web.biz>",
   "license": "MIT",
